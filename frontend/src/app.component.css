@@ -1,0 +1,46 @@
+.main {
+   display: flex;    
+}
+.editor {
+   width: 20%;   
+   height: 500px;
+   border: 2px ridge;
+   border-radius: 10px;
+}
+.container {
+   height: 500px;
+   margin: 10px 10px 10px 10px;
+}
+
+#name  {
+   margin: 10px 10px 10px 70px;
+}
+
+#uniqueNumber, #articles {
+   margin: 10px;
+}
+
+#kolvo {
+   margin: 10px 10px 10px 60px;
+   width: 50px;
+}
+
+.editor, .articles, .quantities {
+   border-radius: 10px;
+}
+.articles {
+   width: 80%;
+   heigth: 500px;   
+}
+div.assignCount {
+   margin: 10px 10px 10px 10px;      
+}
+.fs {
+   position: relative;
+}
+.bContainer {
+   position: absolute;
+   right: 0;
+   margin: -20px 10px 10px 10px;
+   width: 70px;
+}

@@ -1,0 +1,55 @@
+
+<div class = "main">
+  <div class = "editor container">
+    <div class="editorArea "> 
+      <div class = "assignCount"> 
+        <form>
+          <fieldset class="fs">
+            <legend>Adding Article</legend>
+            
+            <label for="name" >Name:</label>
+            <input type="text" id="name" [(ngModel)]="name"><br><br>
+            
+            <label for="uniqueNumber"> UniqueNumber:</label>
+            <input type="text" id="uniqueNumber" [(ngModel)]="uniqueNumber"><br><br>
+
+            <label for="canAssignQuantity">canAssignQuantity:</label>
+            <input type="checkbox" id="canAssignQuantity" [(ngModel)]="canAssignQuantity"><br><br>
+            
+            <button class = "bContainer" (click)="AddArticle()">Add</button>      
+          </fieldset>
+          <fieldset class = "fs">
+            <legend>Edit Count</legend>
+            <label for="kolvo">Count:</label>
+            <input type="number" id="kolvo" [(ngModel)]="kolvo"><br><br>
+            
+            <label for="artList">Parent Article:</label>
+            <input list="artList" id = "articles" [(ngModel)] = "selectedArticle" > 
+            <datalist id="artList" >
+               <option *ngFor="let article of artList" [attr.data-id]="article.id" [value]="article.name" ></option>
+            </datalist> <br><br> 
+                 
+            <button class = "bContainer" (click)="EditCount()">Change</button>      
+          </fieldset>
+        </form>
+      </div>
+      <div class = "addArticle"> </div>
+    </div>
+  </div>
+  <div class = "articles container">
+    <ag-grid-angular  style="width: 100%; height: 500px;"    
+      [rowData]="rowData"     
+      [columnDefs]="columnDefs" 
+      [rowSelection]="'single'" 
+      (cellClicked)="onCellClicked($event)"      
+    >
+    </ag-grid-angular>   
+  </div> 
+</div>
+<div class = "quantities" >
+    <ag-grid-angular  style="width: 100%; height: 500px;"    
+      [rowData]="rowDataChild"     
+      [columnDefs]="columnDefsQuantities"          
+    >
+    </ag-grid-angular>   
+</div>

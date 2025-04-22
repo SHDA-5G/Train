@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "projects": {
+      "trainapp": {
+        "projectType": "application",
+        "root": "",
+        "sourceRoot": "src",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "outputPath": "dist/trainapp",
+              "index": "src/index.html",
+              "main": "src/main.ts",
+              "polyfills": ["zone.js"],
+              "tsConfig": "tsconfig.json",
+              "aot": true
+            }
+          },
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              "buildTarget": "trainapp:build"
+            }
+          }
+        }
+      }
+    },
+    "cli": {
+      "analytics": "4d4f94a3-5da3-438e-b9ab-3104d2dc13d9"
+    }
+  }
